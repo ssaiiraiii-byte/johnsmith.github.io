@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安徽牛锕科技有限公司</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #005A9C; /* 专业蓝 */
+            --secondary-color: #343A40; /* 深灰色文本 */
+            --accent-color: #E87722; /* 橙色点缀 */
+            --bg-light: #F8F9FA; /* 更柔和的背景灰 */
+            --border-color: #DEE2E6;
+        }
+        
+        body {
+            font-family: 'Source Han Sans CN', 'Microsoft YaHei', sans-serif;
+            line-height: 1.8;
+            color: var(--secondary-color);
+            background-color: var(--bg-light);
+        }
+        
+        .report-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 5px solid var(--accent-color);
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 35px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .section-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.09);
+        }
+        
+        .section-header {
+            background-color: #F1F3F5;
+            color: var(--primary-color);
+            padding: 20px 30px;
+            margin: 0;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            padding: 30px 35px;
+        }
+        
+        .parameter-table th {
+            background-color: #e9ecef;
+            font-weight: 600;
+            color: var(--secondary-color);
+            width: 30%;
+        }
+        
+        .calculation-step {
+            padding: 20px;
+            border: 1px solid #E9ECEF;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background-color: #fff;
+        }
+        
+        .calculation-detail {
+            background-color: #F8F9FA;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .final-result {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 25px;
+            background-color: #e7f5ff;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #b3d9ff;
+        }
+        
+        .formula-box {
+            background-color: #F8F9FA;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            margin: 25px 0;
+        }
+        
+        .formula-content {
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            line-height: 2.5;
+            color: #333;
+            overflow-x: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .formula-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        .toc {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        
+        .toc-header {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .toc ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .toc li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.2s ease-in-out;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        .toc li a:hover {
+            color: var(--primary-color);
+            background-color: #F1F3F5;
+            transform: translateX(4px);
+        }
+        
+        .conclusion-box {
+            background-color: #FFF9F2;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .conclusion-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        h2, h3, h4, h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        h3 {
+            margin-top: 2.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h4 {
+            margin-top: 2rem;
+            color: #1971c2; /* A slightly lighter blue for sub-headings */
+        }
+
+        h5 {
+             color: #343a40;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9rem;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .calculation-table th {
+            background-color: #F1F3F5;
+        }
+        
+        .calculation-table .text-danger {
+            color: #dc3545 !important;
+            font-weight: 500;
+        }
+        
+        .calculation-table .text-success {
+            color: #198754 !important;
+            font-weight: 500;
+        }
+        
+        /* Optimized formula fraction style */
+        .frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0 0.2em;
+        }
+        .frac > .top {
+            border-bottom: 1.5px solid #333;
+            padding: 0.1em 0.3em;
+        }
+        .frac > .bottom {
+            padding: 0.1em 0.3em;
+        }
+
+        .summary-table .table-success th, .summary-table .table-success td {
+            background-color: #d1e7dd !important;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 报告头部 -->
+    <header class="report-header text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold"><i class="fas fa-chart-pie me-3"></i>安徽牛锕科技有限公司</h1>
+            <p class="lead">基于“两充两放”与“一充一放”策略的对比分析</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- 目录导航 -->
+            <div class="col-lg-3 mb-4">
+                <div class="toc">
+                    <h5 class="toc-header"><i class="fas fa-list me-2"></i>报告目录</h5>
+                    <ul>
+                        <li><a href="#section-1">1. 项目背景与核心参数</a></li>
+                        <li><a href="#section-2">2. 盈利能力对比分析</a></li>
+                        <li><a href="#section-3">&nbsp;&nbsp;&nbsp;&nbsp;2.1 方案一：“两充两放”</a></li>
+                        <li><a href="#section-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 现金流测算</a></li>
+                        <li><a href="#section-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 NPV 计算</a></li>
+                        <li><a href="#section-6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.3 IRR 计算</a></li>
+                        <li><a href="#section-7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.4 LCOE 计算</a></li>
+                        <li><a href="#section-8">&nbsp;&nbsp;&nbsp;&nbsp;2.2 方案二：“一充一放”</a></li>
+                        <li><a href="#section-9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 现金流测算</a></li>
+                        <li><a href="#section-10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 NPV 计算</a></li>
+                        <li><a href="#section-11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.3 IRR 计算</a></li>
+                        <li><a href="#section-12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.4 LCOE 计算</a></li>
+                        <li><a href="#section-13">3. 结论与建议</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 报告内容 -->
+            <div class="col-lg-9">
+                <!-- 项目背景与参数 -->
+                <section id="section-1" class="section-card">
+                    <h2 class="section-header"><i class="fas fa-project-diagram me-2"></i>1. 项目背景与核心参数</h2>
+                    <div class="section-content">
+                        <p>为应对电力供需缺口，A公司计划建设一套工业储能系统。本项目旨在通过动态财务指标，评估不同运行策略下的经济可行性，为最终决策提供数据支持。所有计算均严格依据案例文件提供的数据。</p>
+                        
+                        <h4 class="mt-4"><i class="fas fa-cogs me-2"></i>核心财务与技术参数</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered parameter-table mt-3">
+                                <thead>
+                                    <tr>
+                                        <th>参数名称</th>
+                                        <th>数值</th>
+                                        <th>单位 / 说明</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>储能系统规模</td><td>2038 / 4076</td><td>kW / kWh</td></tr>
+                                    <tr><td>初始总投资</td><td>611.40</td><td>万元</td></tr>
+                                    <tr><td>自有资金（股权投资）</td><td>183.42</td><td>万元 (30%)</td></tr>
+                                    <tr><td>银行贷款</td><td>427.98</td><td>万元 (70%)</td></tr>
+                                    <tr><td>贷款年限 / 年利率</td><td>10 / 4.65%</td><td>年 / %</td></tr>
+                                    <tr><td>项目寿命 / 折旧年限</td><td>10 / 10</td><td>年</td></tr>
+                                    <tr><td>残值率</td><td>14%</td><td>占初始投资比例</td></tr>
+                                    <tr><td>年折现率 (r)</td><td>5%</td><td>股权投资机会成本</td></tr>
+                                    <tr><td>放电深度 (DOD)</td><td>90%</td><td>-</td></tr>
+                                    <tr><td>系统能量转换效率</td><td>90%</td><td>充放电综合效率</td></tr>
+                                    <tr><td>年运行天数</td><td>330</td><td>天</td></tr>
+                                    <tr><td>所得税政策</td><td>三免三减半</td><td>0%, 12.5%, 25%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 对比分析 -->
+                <section id="section-2" class="section-card">
+                    <h2 class="section-header"><i class="fas fa-balance-scale me-2"></i>2. 盈利能力对比分析</h2>
+                    <div class="section-content">
+                        <p>为确定最优运行策略，本报告将分别对“两充两放”与“一充一放”两种方案进行详细的经济性测算，并对关键指标进行对比。</p>
+                        
+                        <div id="section-3">
+                            <h3 class="mt-5">2.1 方案一：“两充两放”策略</h3>
+                            <p>该策略下，储能系统每日执行两次完整的充放电循环，分别利用“峰谷价差”和“尖峰平价差”进行套利，以实现收益最大化。</p>
+                        </div>
+
+                        <div id="section-4">
+                            <h4>2.1.1 现金流测算</h4>
+                            <div class="calculation-step">
+                                <h5>第一步：计算年总收益</h5>
+                                <div class="calculation-detail">
+                                    <p><strong>年总收益 = 峰谷套利收益 + 尖峰平价套利收益 + 需量管理收益 + 需求侧响应收益</strong></p>
+                                    <p>单次有效放电量 = 额定容量 × DOD × 转换效率 = 4076 kWh × 90% × 90% = 3301.56 kWh</p>
+                                    <p> • 冬夏季(120天)套利收益 = 120天 × (0.6425+0.6178)元/kWh × 3301.56 kWh = 50.18 万元</p>
+                                    <p> • 非冬夏季(210天)套利收益 = 210天 × (0.6240+0.4942)元/kWh × 3301.56 kWh = 77.28 万元</p>
+                                    <p> • 年度套利总收益 = 50.18 + 77.28 = 127.46 万元</p>
+                                    <p>需量管理年收益 = 50.4 万元 (来源: 案例表2)</p>
+                                    <p>需求侧响应年收益 = 1 万元 (来源: 案例表2)</p>
+                                    <p><strong>年总收益 = 127.46 + 50.4 + 1 = 178.86 万元</strong></p>
+                                </div>
+                            </div>
+                            <div class="calculation-step">
+                                <h5>第二步：计算年总成本与税费</h5>
+                                <div class="calculation-detail">
+                                    <p><strong>年运营成本</strong> = 管理费 + 其他费用 + 保险费 + 税金附加</p>
+                                    <p> • 管理费: 13.00万元/年; 其他费用: 4.08万元/年; 保险费: 0.04万元/年 (400元)。</p>
+                                    <p> • 税金附加: 1-5年为0.04万元/年, 6-10年为0.03万元/年。</p>
+                                    <p> • <strong>年运营成本 (1-5年)</strong> = 13 + 4.08 + 0.04 + 0.04 = <strong>17.16 万元</strong></p>
+                                    <p> • <strong>年运营成本 (6-10年)</strong> = 13 + 4.08 + 0.04 + 0.03 = <strong>17.15 万元</strong></p>
+                                    <p><strong>年折旧</strong> = (初始投资 - 预计残值) / 折旧年限 = (611.40 - 611.40 × 14%) / 10 = <strong>52.58 万元</strong></p>
+                                    <p><strong>年等额本息还款</strong> = 贷款额 × [i(1+i)ⁿ] / [(1+i)ⁿ-1] = 427.98 × [4.65%(1.0465)¹⁰] / [(1.0465)¹⁰-1] = <strong>54.47 万元</strong></p>
+                                    <p><strong>所得税</strong>：根据“三免三减半”政策（1-3年税率0%，4-6年12.5%，7-10年25%）计算。应纳税所得额 = 收入 - 运营成本 - 折旧 - 当期利息。</p>
+                                </div>
+                            </div>
+                             <div class="calculation-step">
+                                <h5>第三步：计算各年股权净现金流</h5>
+                                <p>根据以上数据，计算得出项目全生命周期的股权净现金流如下表所示。其中，股权净现金流 = 收入 - 运营成本 - 所得税 - 贷款本息偿还 + 期末残值回收。</p>
+                                <div class="table-responsive">
+                                    <table class="calculation-table">
+                                        <thead><tr><th>年份</th><th>收入</th><th>运营成本</th><th>折旧</th><th>利息</th><th>所得税</th><th>本息偿还</th><th>残值回收</th><th>净现金流(万元)</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="text-danger">-183.42</td></tr>
+                                            <tr><td>1</td><td>178.86</td><td>17.16</td><td>52.58</td><td>19.90</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">107.23</td></tr>
+                                            <tr><td>2</td><td>178.86</td><td>17.16</td><td>52.58</td><td>18.29</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">107.23</td></tr>
+                                            <tr><td>3</td><td>178.86</td><td>17.16</td><td>52.58</td><td>16.61</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">107.23</td></tr>
+                                            <tr><td>4</td><td>178.86</td><td>17.16</td><td>52.58</td><td>14.85</td><td>11.78</td><td>54.47</td><td>-</td><td class="text-success">95.45</td></tr>
+                                            <tr><td>5</td><td>178.86</td><td>17.16</td><td>52.58</td><td>13.01</td><td>12.01</td><td>54.47</td><td>-</td><td class="text-success">95.22</td></tr>
+                                            <tr><td>6</td><td>178.86</td><td>17.15</td><td>52.58</td><td>11.08</td><td>12.26</td><td>54.47</td><td>-</td><td class="text-success">95.00</td></tr>
+                                            <tr><td>7</td><td>178.86</td><td>17.15</td><td>52.58</td><td>9.06</td><td>25.02</td><td>54.47</td><td>-</td><td class="text-success">82.22</td></tr>
+                                            <tr><td>8</td><td>178.86</td><td>17.15</td><td>52.58</td><td>6.95</td><td>25.55</td><td>54.47</td><td>-</td><td class="text-success">81.70</td></tr>
+                                            <tr><td>9</td><td>178.86</td><td>17.15</td><td>52.58</td><td>4.74</td><td>26.10</td><td>54.47</td><td>-</td><td class="text-success">81.14</td></tr>
+                                            <tr><td>10</td><td>178.86</td><td>17.15</td><td>52.58</td><td>2.42</td><td>26.68</td><td>54.47</td><td>85.60</td><td class="text-success">166.16</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="section-5">
+                            <h4>2.1.2 净现值 (NPV) 计算</h4>
+                            <div class="formula-box">
+                                <div class="formula-label">NPV 计算公式:</div>
+                                <div class="formula-content">
+                                    <span>NPV = </span>
+                                    <div style="display: inline-block; vertical-align: middle; text-align: center; position: relative;">
+                                        <span style="font-size: 2.5rem; line-height: 1;">∑</span>
+                                        <span style="position: absolute; top: -0.8em; left: 50%; transform: translateX(-50%); font-size: 1rem;">n</span>
+                                        <span style="position: absolute; bottom: -0.8em; left: 50%; transform: translateX(-50%); font-size: 1rem;">t=0</span>
+                                    </div>
+                                    <div class="frac">
+                                        <span class="top">NCF<sub>t</sub></span>
+                                        <span class="bottom">(1 + r)<sup>t</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>使用折现率 r = 5%，对上表现金流进行折现加总，计算得出：</p>
+                            <div class="final-result">
+                                NPV = 604.08 万元
+                            </div>
+                            <p><strong>结论：</strong>NPV (604.08万元) 远大于0，表明项目投资的预期收益超过了资本成本，具备很强的财务可行性。</p>
+                        </div>
+
+                        <div id="section-6">
+                            <h4>2.1.3 内部收益率 (IRR) 计算</h4>
+                             <div class="formula-box">
+                                <div class="formula-label">IRR 定义: 使NPV等于0的折现率</div>
+                                <div class="formula-content">
+                                    <div style="display: inline-block; vertical-align: middle; text-align: center; position: relative;">
+                                        <span style="font-size: 2.5rem; line-height: 1;">∑</span>
+                                        <span style="position: absolute; top: -0.8em; left: 50%; transform: translateX(-50%); font-size: 1rem;">n</span>
+                                        <span style="position: absolute; bottom: -0.8em; left: 50%; transform: translateX(-50%); font-size: 1rem;">t=0</span>
+                                    </div>
+                                    <div class="frac">
+                                        <span class="top">NCF<sub>t</sub></span>
+                                        <span class="bottom">(1 + IRR)<sup>t</sup></span>
+                                    </div>
+                                    <span> = 0</span>
+                                </div>
+                            </div>
+                            <p>通过插值法或财务函数，找到使上述现金流净现值为0的折现率。</p>
+                            <div class="final-result">
+                                IRR = 33.68%
+                            </div>
+                            <p><strong>结论：</strong>IRR (33.68%) 远高于基准折现率 (5%)，表明项目具有极强的盈利能力和抗风险能力。</p>
+                        </div>
+
+                        <div id="section-7">
+                            <h4>2.1.4 平准化度电成本 (LCOE) 计算</h4>
+                            <div class="formula-box">
+                                <div class="formula-label">LCOE 计算公式:</div>
+                                <div class="formula-content">
+                                    <span>LCOE = </span>
+                                    <div class="frac">
+                                        <span class="top" style="display: flex; align-items: center; justify-content: center; padding: 0.2em 0;">
+                                            <div style="display: inline-block; text-align: center; position: relative; margin-right: 0.3em;">
+                                                <span style="font-size: 1.5rem; line-height: 1;">∑</span>
+                                                <span style="position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-size: 0.7rem;">n</span>
+                                                <span style="position: absolute; bottom: -0.7em; left: 50%; transform: translateX(-50%); font-size: 0.7rem;">t=0</span>
+                                            </div>
+                                            <div class="frac" style="font-size: 0.8em;">
+                                                <span class="top">投资<sub>t</sub> + 运营成本<sub>t</sub> - 残值<sub>t</sub></span>
+                                                <span class="bottom">(1 + r)<sup>t</sup></span>
+                                            </div>
+                                        </span>
+                                        <span class="bottom" style="display: flex; align-items: center; justify-content: center; padding: 0.2em 0;">
+                                            <div style="display: inline-block; text-align: center; position: relative; margin-right: 0.3em;">
+                                                <span style="font-size: 1.5rem; line-height: 1;">∑</span>
+                                                <span style="position: absolute; top: -0.7em; left: 50%; transform: translateX(-50%); font-size: 0.7rem;">n</span>
+                                                <span style="position: absolute; bottom: -0.7em; left: 50%; transform: translateX(-50%); font-size: 0.7rem;">t=1</span>
+                                            </div>
+                                            <div class="frac" style="font-size: 0.8em;">
+                                                <span class="top">年放电量<sub>t</sub></span>
+                                                <span class="bottom">(1 + r)<sup>t</sup></span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculation-step">
+                                <p><strong>分子 (总成本现值):</strong></p>
+                                <p>总成本现值 = 初始投资 + Σ(年运营成本现值) - 残值现值</p>
+                                <p> • 运营成本现值 = Σ [年运营成本 / (1+5%)ᵗ] = <strong>132.47 万元</strong></p>
+                                <p> • 残值现值 = (611.40 × 14%) / (1+5%)¹⁰ = <strong>52.55 万元</strong></p>
+                                <p> • 总成本现值 = 611.40 + 132.47 - 52.55 = <strong>691.32 万元</strong></p>
+                                <p><strong>分母 (总放电量现值):</strong></p>
+                                <p>年放电量 = 3301.56 kWh/次 × 2次/天 × 330天 = 2,179,030 kWh</p>
+                                <p>总放电量现值 = Σ [年放电量 / (1+5%)ᵗ] = 2,179,030 × PVIFA(5%, 10年) = 2,179,030 × 7.7217 = <strong>16,824,838 kWh</strong></p>
+                            </div>
+                            <div class="final-result">
+                                LCOE = 6,913,200 元 / 16,824,838 kWh = 0.411 元/kWh
+                            </div>
+                            <p><strong>结论：</strong>LCOE (0.411元/kWh) 显著低于项目的主要套利价差，表明项目在单位发电成本上具有很强的经济性。</p>
+                        </div>
+                        
+                        <div id="section-8">
+                            <h3 class="mt-5">2.2 方案二：“一充一放”策略</h3>
+                            <p>该策略下，储能系统每日仅执行一次充放电循环，利用“峰谷价差”进行套利。此方案循环次数少，对电池寿命更友好，但可能牺牲部分收益。</p>
+                        </div>
+
+                        <div id="section-9">
+                            <h4>2.2.1 现金流测算</h4>
+                            <div class="calculation-step">
+                                <h5>第一步：计算年总收益</h5>
+                                <div class="calculation-detail">
+                                    <p><strong>年总收益 = 峰谷套利收益 + 需量管理收益 + 需求侧响应收益</strong></p>
+                                    <p>单次有效放电量 = 3301.56 kWh (同方案一)</p>
+                                    <p>年套利收益 = [120天 × 0.6425元/kWh + 210天 × 0.6240元/kWh] × 3301.56 kWh = 68.72 万元</p>
+                                    <p>需量管理与需求侧响应收益不变，分别为 50.4 万元和 1 万元。</p>
+                                    <p><strong>年总收益 = 68.72 + 50.4 + 1 = 120.12 万元</strong></p>
+                                </div>
+                            </div>
+                            <div class="calculation-step">
+                                <h5>第二步：计算各年股权净现金流</h5>
+                                <p>年运营成本、折旧、贷款本息与方案一相同，仅收入和所得税发生变化。计算得出全生命周期的股权净现金流如下：</p>
+                                <div class="table-responsive">
+                                    <table class="calculation-table">
+                                        <thead><tr><th>年份</th><th>收入</th><th>运营成本</th><th>折旧</th><th>利息</th><th>所得税</th><th>本息偿还</th><th>残值回收</th><th>净现金流(万元)</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="text-danger">-183.42</td></tr>
+                                            <tr><td>1</td><td>120.12</td><td>17.16</td><td>52.58</td><td>19.90</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">48.49</td></tr>
+                                            <tr><td>2</td><td>120.12</td><td>17.16</td><td>52.58</td><td>18.29</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">48.49</td></tr>
+                                            <tr><td>3</td><td>120.12</td><td>17.16</td><td>52.58</td><td>16.61</td><td>0.00</td><td>54.47</td><td>-</td><td class="text-success">48.49</td></tr>
+                                            <tr><td>4</td><td>120.12</td><td>17.16</td><td>52.58</td><td>14.85</td><td>4.44</td><td>54.47</td><td>-</td><td class="text-success">44.05</td></tr>
+                                            <tr><td>5</td><td>120.12</td><td>17.16</td><td>52.58</td><td>13.01</td><td>4.67</td><td>54.47</td><td>-</td><td class="text-success">43.82</td></tr>
+                                            <tr><td>6</td><td>120.12</td><td>17.15</td><td>52.58</td><td>11.08</td><td>4.91</td><td>54.47</td><td>-</td><td class="text-success">43.59</td></tr>
+                                            <tr><td>7</td><td>120.12</td><td>17.15</td><td>52.58</td><td>9.06</td><td>10.33</td><td>54.47</td><td>-</td><td class="text-success">38.17</td></tr>
+                                            <tr><td>8</td><td>120.12</td><td>17.15</td><td>52.58</td><td>6.95</td><td>10.86</td><td>54.47</td><td>-</td><td class="text-success">37.64</td></tr>
+                                            <tr><td>9</td><td>120.12</td><td>17.15</td><td>52.58</td><td>4.74</td><td>11.41</td><td>54.47</td><td>-</td><td class="text-success">37.09</td></tr>
+                                            <tr><td>10</td><td>120.12</td><td>17.15</td><td>52.58</td><td>2.42</td><td>11.99</td><td>54.47</td><td>85.60</td><td class="text-success">122.11</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="section-10">
+                            <h4>2.2.2 净现值 (NPV) 计算</h4>
+                            <p>使用折现率 r = 5%，对“一充一放”策略的现金流进行折现加总。</p>
+                            <div class="final-result">
+                                NPV = 102.97 万元
+                            </div>
+                            <p><strong>结论：</strong>NPV (102.97万元) 大于0，项目在此策略下同样具备财务可行性，但价值创造能力显著低于“两充两放”策略。</p>
+                        </div>
+
+                        <div id="section-11">
+                            <h4>2.2.3 内部收益率 (IRR) 计算</h4>
+                            <p>计算使“一充一放”策略现金流净现值为0的折现率。</p>
+                            <div class="final-result">
+                                IRR = 18.04%
+                            </div>
+                            <p><strong>结论：</strong>IRR (18.04%) 仍远高于基准折现率 (5%)，表明项目盈利能力良好，但与“两充两放”策略的33.68%相比，回报率较低。</p>
+                        </div>
+
+                        <div id="section-12">
+                            <h4>2.2.4 平准化度电成本 (LCOE) 计算</h4>
+                            <div class="calculation-step">
+                                <p><strong>分子 (总成本现值):</strong> 与方案一相同，为 <strong>691.32 万元</strong>。</p>
+                                <p><strong>分母 (总放电量现值):</strong></p>
+                                <p>年放电量 = 3301.56 kWh/次 × 1次/天 × 330天 = 1,089,515 kWh</p>
+                                <p>总放电量现值 = 1,089,515 × PVIFA(5%, 10年) = 1,089,515 × 7.7217 = <strong>8,412,419 kWh</strong></p>
+                            </div>
+                            <div class="final-result">
+                                LCOE = 6,913,200 元 / 8,412,419 kWh = 0.822 元/kWh
+                            </div>
+                            <p><strong>结论：</strong>LCOE (0.822元/kWh) 显著高于“两充两放”策略。这是因为总成本在更少的放电量上进行分摊，导致单位成本上升。</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 结论与建议 -->
+                <section id="section-13" class="section-card">
+                    <h2 class="section-header"><i class="fas fa-clipboard-check me-2"></i>3. 结论与建议</h2>
+                    <div class="section-content">
+                        <h4 class="mt-2"><i class="fas fa-table me-2"></i>关键指标对比汇总</h4>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-bordered summary-table">
+                                <thead>
+                                    <tr>
+                                        <th>指标</th>
+                                        <th>“两充两放”策略</th>
+                                        <th>“一充一放”策略</th>
+                                        <th>优势方案</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>净现值 (NPV)</strong></td>
+                                        <td>604.08 万元</td>
+                                        <td>102.97 万元</td>
+                                        <td class="text-center"><i class="fas fa-arrow-left"></i> 两充两放</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>内部收益率 (IRR)</strong></td>
+                                        <td>33.68%</td>
+                                        <td>18.04%</td>
+                                        <td class="text-center"><i class="fas fa-arrow-left"></i> 两充两放</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>平准化度电成本 (LCOE)</strong></td>
+                                        <td>0.411 元/kWh</td>
+                                        <td>0.822 元/kWh</td>
+                                        <td class="text-center"><i class="fas fa-arrow-left"></i> 两充两放</td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <td colspan="4" class="text-center"><strong>“两充两放”策略在所有核心经济指标上均表现出压倒性优势</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="conclusion-box mt-5">
+                            <div class="conclusion-title"><i class="fas fa-lightbulb me-2"></i>最终结论与建议</div>
+                            <p>通过对两种运行策略的详细财务测算与对比，可以得出以下结论：</p>
+                            <ul>
+                                <li><strong>经济性：</strong>两种方案在财务上均为可行（NPV > 0, IRR > 5%）。然而，“两充两放”策略的盈利能力远超“一充一放”策略，其净现值高出近5倍，内部收益率高出超过15个百分点。</li>
+                                <li><strong>成本效益：</strong>“两充两放”策略通过更高效地利用储能设备，将总成本分摊到更多的放电量上，使得其平准化度电成本（LCOE）仅为“一充一放”策略的一半，成本优势极为明显。</li>
+                                <li><strong>风险考量：</strong>虽然“两充两放”策略每日循环次数更多，理论上对电池寿命的耗损更大，但其带来的巨大经济效益足以覆盖潜在的、通过合理运维可以减缓的额外衰减成本。</li>
+                            </ul>
+                            <p class="mb-0 fw-bold">综上所述，尽管需要考虑电池长期衰减的管理，但从纯粹的经济性角度出发，A公司应毫无疑问地选择“两充两放”作为其工业储能项目的运行策略。该策略能为公司创造最大化的经济价值，是实现项目投资回报最优解的必然选择。</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
