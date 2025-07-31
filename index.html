@@ -3,454 +3,699 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安徽牛锕新材料科技有限公司 - PFA系列的产品</title>
+    <title>安徽牛锕新材料科技有限公司 - 气体管道工程建设一站式解决方案服务商</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- 全局和重置样式 --- */
-        body {
-            margin: 0;
-            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            font-size: 14px;
-        }
-
         * {
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
             margin: 0;
             padding: 0;
-        }
-
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* --- 顶部 Header --- */
-        .top-header {
-            background-color: #fff;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .top-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-text h1 {
-            font-size: 28px;
-            margin: 0;
-            color: #005fab; /* 主题蓝色 */
-            font-weight: bold;
-        }
-
-        .logo-text h2 {
-            font-size: 18px;
-            margin: 5px 0 0 0;
-            color: #555;
-            font-weight: normal;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
         }
         
-        .logo-text h3 {
-            font-size: 14px;
-            margin: 5px 0 0 0;
-            color: #777;
-            font-weight: normal;
-        }
-
-        .header-contact {
-            font-size: 24px;
-            color: #e60012; /* 红色电话 */
-            font-weight: bold;
-        }
-
-        /* --- 导航栏 --- */
-        .main-nav {
-            background-color: #005fab; /* 主题蓝色 */
-            color: #fff;
-        }
-
-        .main-nav ul {
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .main-nav ul li a {
-            display: block;
-            padding: 15px 25px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .main-nav ul li a:hover, .main-nav ul li.active a {
-            background-color: #004a8c; /* 悬停/激活颜色 */
-        }
-
-        /* --- Banner --- */
-        .banner {
-            background-image: url('https://via.placeholder.com/1920x300/cccccc/ffffff?text=Banner+Background+Image'); /* 替换为您的Banner背景图 */
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 60px 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        }
-
-        .banner h1 {
-            font-size: 42px;
-            margin: 0;
-        }
-
-        .banner h2 {
-            font-size: 24px;
-            margin-top: 10px;
-            font-weight: normal;
-        }
-
-        /* --- 面包屑和搜索 --- */
-        .breadcrumb-search {
-            background-color: #fff;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .breadcrumb-search .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .search-box {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-box input {
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            height: 30px;
-            outline: none;
-        }
-
-        .search-box button {
-            background-color: #005fab;
-            color: #fff;
-            border: none;
-            height: 30px;
-            padding: 0 15px;
-            cursor: pointer;
-        }
-        
-        .search-box button:hover {
-            background-color: #004a8c;
-        }
-
-        /* --- 主内容区 --- */
-        .main-content {
-            display: flex;
-            padding: 20px 0;
-            background-color: #fff;
-        }
-
-        /* 左侧边栏 */
-        .sidebar {
-            width: 240px;
-            flex-shrink: 0;
-            border: 1px solid #eee;
-            margin-right: 20px;
-        }
-
-        .sidebar-title {
-            background-color: #005fab;
-            color: #fff;
-            padding: 12px 15px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .sidebar-menu li a {
-            display: block;
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        .sidebar-menu li a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .sidebar-menu li.active a {
-            background-color: #f0f0f0;
-            color: #e60012;
-            font-weight: bold;
-        }
-
-        /* 右侧内容 */
-        .content-area {
-            flex-grow: 1;
-        }
-
-        .content-title {
-            font-size: 22px;
+        body {
+            background-color: #f5f7fa;
             color: #333;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #005fab;
-            margin-bottom: 20px;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .product-item {
-            width: calc(33.333% - 14px); /* 简单实现三列布局 */
-            border: 1px solid #eee;
-            text-align: center;
-            padding: 15px;
-            transition: box-shadow 0.3s;
+            line-height: 1.6;
         }
         
-        .product-item:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .product-item p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        /* --- 底部 Footer --- */
-        .footer {
-            background-color: #333;
-            color: #ccc;
-            padding: 30px 0;
-        }
-
-        .footer-columns {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .footer-col {
-            width: 30%;
-        }
-
-        .footer-col h4 {
-            font-size: 18px;
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #555;
-        }
-
-        .footer-col p, .footer-col li {
-            line-height: 2;
-            font-size: 14px;
-        }
-        
-        .footer-col .qr-codes {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .footer-col .qr-code-item {
+        /* 头部样式 */
+        .top-bar {
+            background: linear-gradient(135deg, #1a3a6c, #2c5aa0);
+            color: white;
+            padding: 15px 0;
             text-align: center;
         }
-
-        .footer-col .qr-code-item img {
-            width: 100px;
-            height: 100px;
-            background: #fff;
-            padding: 5px;
+        
+        .company-name {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
-
-        .footer-nav li a:hover {
-            color: #fff;
+        
+        .company-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        
+        .contact-number {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0 10%;
+        }
+        
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 18px 25px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #2980b9;
+            background-color: #f8f9fa;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: #2980b9;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        
+        /* 横幅区域 */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3') center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .banner-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .banner-subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+        
+        .custom-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .custom-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: #e9ecef;
+            padding: 15px 10%;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
             text-decoration: underline;
         }
-
-        /* --- 底部声明 --- */
-        .copyright {
-            background-color: #222;
-            color: #999;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 12px;
+        
+        /* 主要内容区域 */
+        .main-content {
+            display: flex;
+            padding: 30px 10%;
+            gap: 30px;
         }
-
+        
+        /* 侧边栏 */
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0; /* 防止侧边栏被压缩 */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            color: #1a3a6c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-item {
+            margin-bottom: 12px;
+        }
+        
+        .category-link {
+            display: block;
+            padding: 10px 15px;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .category-link:hover {
+            background-color: #f0f7ff;
+            color: #2980b9;
+        }
+        
+        .category-link.active {
+            background-color: #e3f2fd;
+            color: #1a73e8;
+            font-weight: 500;
+        }
+        
+        .category-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #2980b9;
+        }
+        
+        /* 内容展示区 */
+        .content-display {
+            flex: 1;
+        }
+        
+        /* 内容面板切换样式 */
+        .content-panel {
+            display: none; /* 默认隐藏所有内容面板 */
+        }
+        .content-panel.active-content {
+            display: block; /* 只显示激活的内容面板 */
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #1a3a6c;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 220px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(135deg, #1a3a6c, #2c5aa0);
+            color: white;
+            padding: 50px 10% 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #e74c3c;
+        }
+        
+        .qr-codes {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .qr-code {
+            text-align: center;
+        }
+        
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .qr-placeholder i {
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-info p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 2.2rem;
+            }
+            
+            .banner-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-link {
+                padding: 15px 18px;
+                font-size: 0.95rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <div class="company-name">安徽牛锕新材料科技有限公司</div>
+        <div class="company-tagline">气体管道工程建设一站式解决方案服务商</div>
+        <div class="contact-number">029-88691633</div>
+    </div>
 
-    <!-- 顶部信息栏 -->
-    <header class="top-header">
-        <div class="container">
-            <div class="logo-area">
-                <!-- 请将 src 替换为您的Logo图片地址 -->
-                <!-- <img src="logo.png" alt="安徽牛锕新材料科技有限公司" class="logo-img"> -->
-                <div class="logo-text">
-                    <h1>安徽牛锕新材料科技有限公司</h1>
-                    <h2>气体管道工程建设</h2>
-                    <h3>一站式解决方案服务商</h3>
-                </div>
-            </div>
-            <div class="header-contact">
-                029-88691633
-            </div>
-        </div>
-    </header>
-
-    <!-- 主导航栏 -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">气体管道工程</a></li>
-                <li class="active"><a href="#">配套产品</a></li>
-                <li><a href="#">光伏组件</a></li>
-                <li><a href="#">非标定制</a></li>
-                <li><a href="#">工程案例</a></li>
-                <li><a href="#">关于我们</a></li>
-                <li><a href="#">联系我们</a></li>
-            </ul>
-        </div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">气体管道工程</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">配套产品</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">光伏组件</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">非标定制</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">工程案例</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">关于我们</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">联系我们</a></li>
+        </ul>
     </nav>
 
-    <!-- Banner区域 -->
-    <section class="banner">
-        <h1>专业气体管道及设备的设计及安装</h1>
-        <h2>支持非标订制</h2>
-    </section>
-
-    <!-- 面包屑导航和搜索 -->
-    <div class="breadcrumb-search">
-        <div class="container">
-            <div class="breadcrumb">
-                当前位置: <a href="#">首页</a> &gt; <a href="#">产品中心</a> &gt; <a href="#">配套产品</a> &gt; PFA系列的产品
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="请输入关键词">
-                <button>搜索</button>
-            </div>
-        </div>
+    <!-- 横幅区域 -->
+    <div class="banner">
+        <h1 class="banner-title">专业气体管道及设备的设计及安装</h1>
+        <p class="banner-subtitle">支持非标订制</p>
+        <button class="custom-btn">立即咨询</button>
     </div>
 
-    <!-- 主内容区域 -->
-    <div class="container">
-        <div class="main-content">
-            <!-- 左侧边栏 -->
-            <aside class="sidebar">
-                <div class="sidebar-title">配套产品</div>
-                <ul class="sidebar-menu">
-                    <li><a href="#">气体管道工程</a></li>
-                    <li><a href="#">光伏电站</a></li>
-                    <li><a href="#">气体实验工程配套产品</a></li>
-                    <li><a href="#">不锈钢接头和阀门</a></li>
-                    <li><a href="#">实验室集中供气系统</a></li>
-                    <li><a href="#">全自动焊机设备</a></li>
-                    <li><a href="#">仪器仪表</a></li>
-                    <li><a href="#">半导体及光伏设备</a></li>
-                    <li class="active"><a href="#">PFA系列的产品</a></li>
-                    <li><a href="#">气动元件</a></li>
-                    <li><a href="#">不锈钢管</a></li>
-                </ul>
-            </aside>
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <span>当前位置: <a href="#">首页</a> &gt; <a href="#">产品中心</a> &gt; <a href="#">配套产品</a> &gt; <span class="breadcrumb-current">PFA系列的产品</span></span>
+    </div>
 
-            <!-- 右侧产品展示区 -->
-            <main class="content-area">
-                <h3 class="content-title">PFA系列的产品</h3>
-                <div class="product-list">
-                    <div class="product-item">
-                        <!-- 请将 src 替换为您的产品图片地址 -->
-                        <img src="https://via.placeholder.com/250x200/E8E8E8/000000?text=NICHIAS+PFA管" alt="NICHIAS PFA管">
-                        <p>NICHIAS PFA管</p>
+    <!-- 主要内容区域 -->
+    <div class="main-content">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <h2 class="sidebar-title">产品分类</h2>
+            <ul class="category-list">
+                <li class="category-item"><a href="#" class="category-link" data-target="gas-pipeline">气体管道工程</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="solar-station">光伏电站</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="gas-lab-products">气体实验工程配套产品</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="ss-fittings">不锈钢接头和阀门</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="central-gas-supply">实验室集中供气系统</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="welding-machine">全自动焊机设备</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="instruments">仪器仪表</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="semiconductor-pv">半导体及光伏设备</a></li>
+                <li class="category-item"><a href="#" class="category-link active" data-target="pfa-series">PFA系列的产品</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="pneumatic-components">气动元件</a></li>
+                <li class="category-item"><a href="#" class="category-link" data-target="ss-pipe">不锈钢管</a></li>
+            </ul>
+        </div>
+
+        <!-- 内容展示区 -->
+        <div class="content-display">
+            
+            <!-- 内容面板: 气体管道工程 (占位符) -->
+            <div id="gas-pipeline" class="content-panel">
+                <h2 class="section-title">气体管道工程</h2>
+                <p>这里是“气体管道工程”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 光伏电站 (占位符) -->
+            <div id="solar-station" class="content-panel">
+                <h2 class="section-title">光伏电站</h2>
+                <p>这里是“光伏电站”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 气体实验工程配套产品 (占位符) -->
+            <div id="gas-lab-products" class="content-panel">
+                <h2 class="section-title">气体实验工程配套产品</h2>
+                <p>这里是“气体实验工程配套产品”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 不锈钢接头和阀门 (占位符) -->
+            <div id="ss-fittings" class="content-panel">
+                <h2 class="section-title">不锈钢接头和阀门</h2>
+                <p>这里是“不锈钢接头和阀门”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 实验室集中供气系统 (占位符) -->
+            <div id="central-gas-supply" class="content-panel">
+                <h2 class="section-title">实验室集中供气系统</h2>
+                <p>这里是“实验室集中供气系统”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 全自动焊机设备 (占位符) -->
+            <div id="welding-machine" class="content-panel">
+                <h2 class="section-title">全自动焊机设备</h2>
+                <p>这里是“全自动焊机设备”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 仪器仪表 (占位符) -->
+            <div id="instruments" class="content-panel">
+                <h2 class="section-title">仪器仪表</h2>
+                <p>这里是“仪器仪表”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 半导体及光伏设备 (占位符) -->
+            <div id="semiconductor-pv" class="content-panel">
+                <h2 class="section-title">半导体及光伏设备</h2>
+                <p>这里是“半导体及光伏设备”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: PFA系列的产品 (初始显示内容) -->
+            <div id="pfa-series" class="content-panel active-content">
+                <h2 class="section-title">PFA系列的产品</h2>
+                <div class="products-grid">
+                    <!-- 产品1 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300x200?text=PFA管材" alt="NICHIAS PFA管">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">NICHIAS PFA管</h3>
+                            <p class="product-desc">高品质PFA管材，耐高温、耐腐蚀，适用于半导体和光伏行业高纯度气体输送。</p>
+                        </div>
                     </div>
-                    <div class="product-item">
-                        <!-- 请将 src 替换为您的产品图片地址 -->
-                        <img src="https://via.placeholder.com/250x200/E8E8E8/000000?text=PFA标准管接头" alt="PFA标准管接头">
-                        <p>PFA标准管接头</p>
+                    
+                    <!-- 产品2 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300x200?text=PFA接头" alt="PFA标准管接头">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">PFA标准管接头</h3>
+                            <p class="product-desc">高密封性PFA标准管接头，适用于各种高纯度气体管道系统，确保无泄漏连接。</p>
+                        </div>
                     </div>
-                    <!-- 如果有更多产品，可以继续添加 product-item -->
+                    
+                    <!-- 产品3 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300x200?text=PFA阀门" alt="PFA高纯阀门">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">PFA高纯阀门</h3>
+                            <p class="product-desc">专为高纯度气体系统设计的PFA阀门，零污染、耐腐蚀，适用于严苛环境。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品4 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300x200?text=PFA配件" alt="PFA管道配件">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">PFA管道配件</h3>
+                            <p class="product-desc">全套PFA管道配件，包括弯头、三通、变径等，满足各种管道连接需求。</p>
+                        </div>
+                    </div>
                 </div>
-            </main>
+            </div>
+
+            <!-- 内容面板: 气动元件 (占位符) -->
+            <div id="pneumatic-components" class="content-panel">
+                <h2 class="section-title">气动元件</h2>
+                <p>这里是“气动元件”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
+            <!-- 内容面板: 不锈钢管 (占位符) -->
+            <div id="ss-pipe" class="content-panel">
+                <h2 class="section-title">不锈钢管</h2>
+                <p>这里是“不锈钢管”的内容占位符。您可以在这里添加相关的文字描述、图片或产品列表。</p>
+            </div>
+
         </div>
     </div>
 
-    <!-- 底部信息 -->
+    <!-- 页脚 -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-col">
-                    <h4>安徽牛锕新材料科技有限公司</h4>
-                    <div class="qr-codes">
-                        <div class="qr-code-item">
-                            <!-- 请将 src 替换为您的二维码图片地址 -->
-                            <img src="https://via.placeholder.com/100x100/ffffff/000000?text=QR+Code" alt="微信二维码">
-                            <p>加微信好友</p>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>安徽牛锕新材料科技有限公司</h3>
+                <div class="qr-codes">
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fab fa-weixin"></i>
                         </div>
-                        <div class="qr-code-item">
-                            <!-- 请将 src 替换为您的二维码图片地址 -->
-                            <img src="https://via.placeholder.com/100x100/ffffff/000000?text=QR+Code" alt="微信二维码">
-                            <p>加微信好友</p>
+                        <div>加微信好友</div>
+                    </div>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fab fa-weixin"></i>
                         </div>
+                        <div>加微信好友</div>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>联系方式</h4>
-                    <p>座机: 123456789 全国热线</p>
-                    <p>联系电话: 158-0550-8811 丁经理</p>
-                    <p>联系电话: 000-0000-0000 丁经理</p>
-                </div>
-                <div class="footer-col">
-                    <h4>底部导航</h4>
-                    <ul class="footer-nav">
-                        <li><a href="#">气体管道工程</a></li>
-                        <li><a href="#">实验室集中供气系统</a></li>
-                        <li><a href="#">仪器仪表</a></li>
-                        <li><a href="#">PFA系列的产品</a></li>
-                        <li><a href="#">不锈钢接头和阀门</a></li>
-                        <li><a href="#">全自动焊机设备</a></li>
-                        <li><a href="#">半导体及光伏设备</a></li>
-                        <li><a href="#">各类非标产品定制</a></li>
-                    </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>联系方式</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> 座机: 029-88691633 全国热线</p>
+                    <p><i class="fas fa-mobile-alt"></i> 联系电话: 135-0918-4730 赵经理</p>
+                    <p><i class="fas fa-mobile-alt"></i> 联系电话: 187-0677-9283 米经理</p>
+                    <p><i class="fas fa-envelope"></i> 邮箱: contact@wmax-tech.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 地址: 陕西省西安市高新技术开发区</p>
                 </div>
             </div>
+            
+            <div class="footer-column">
+                <h3>底部导航</h3>
+                <ul class="footer-links">
+                    <li><a href="#">气体管道工程</a></li>
+                    <li><a href="#">实验室集中供气系统</a></li>
+                    <li><a href="#">仪器仪表</a></li>
+                    <li><a href="#">PFA系列的产品</a></li>
+                    <li><a href="#">不锈钢接头和阀门</a></li>
+                    <li><a href="#">全自动焊机设备</a></li>
+                    <li><a href="#">半导体及光伏设备</a></li>
+                    <li><a href="#">各类非标产品定制</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>声明: 本站部分内容由图片来源于互联网, 如有侵权请及时联系管理员删除, 谢谢!</p>
+            <p>© 2023 安徽牛锕新材料科技有限公司 版权所有</p>
         </div>
     </footer>
 
-    <!-- 底部版权声明 -->
-    <div class="copyright">
-        <div class="container">
-            声明: 本站部分内容由图片来源于互联网, 如有侵权请及时联系管理员删除, 谢谢!
-        </div>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航栏滚动效果
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.style.position = 'fixed';
+                    navbar.style.top = '0';
+                    navbar.style.width = '100%';
+                    navbar.style.zIndex = '1000';
+                    navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.position = 'static';
+                    navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                }
+            });
+            
+            // --- 新增：侧边栏内容切换功能 ---
+            const categoryLinks = document.querySelectorAll('.category-link');
+            const contentPanels = document.querySelectorAll('.content-panel');
+            const breadcrumbCurrent = document.querySelector('.breadcrumb-current');
 
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // 阻止链接的默认跳转行为
+
+                    // 1. 更新侧边栏链接的激活状态
+                    categoryLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 2. 获取目标内容的ID
+                    const targetId = this.getAttribute('data-target');
+                    const targetPanel = document.getElementById(targetId);
+
+                    // 3. 切换内容面板的显示
+                    contentPanels.forEach(panel => panel.classList.remove('active-content'));
+                    if (targetPanel) {
+                        targetPanel.classList.add('active-content');
+                    }
+
+                    // 4. 更新面包屑导航
+                    if (breadcrumbCurrent) {
+                        breadcrumbCurrent.textContent = this.textContent;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
